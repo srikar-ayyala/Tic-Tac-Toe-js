@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-base-color: #090B0C;
+    --background-board-color: #242732;
+    --accent-color-1: #6B5DD3;
+    --accent-color-2: #b089e6;
+    --tile-color: #6f7277;
+    --text-color: #dad5ff;
+}
+
+body {
+    background-color: var(--background-base-color);
+    color: var(--text-color);
+}
+
+.outer-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    background-color: var(--background-board-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.inner-box {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.check-box {
+    border: 0.5px solid var(--accent-color-1);
+    transition: 0.25s ease;
+}
+
+.highlight {
+    background-color: var(--accent-color-2);
+}
+
+.player-count {
+    position: fixed;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, 0);
+    padding: 20px;
+    background-color: var(--background-board-color);
+    border-radius: 15px;
+    border: 2px solid var(--accent-color-2);
+}
+
+
+
+.tick {
+    background-image: url(tick.png);
+    background-size: cover;
+}
+.cross {
+    background-image: url(cross.png);
+    background-size: cover;
+}
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
